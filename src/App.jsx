@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-import {Link, useLocation, Routes, Route, useParams } from 'react-router-dom';
+import {Link, useLocation, Routes, Route } from 'react-router-dom';
 
 const Home = () => {
   return ( <h1>HOME</h1> );
@@ -9,7 +9,7 @@ const Home = () => {
 const Posts = ({ posts }) => {
   return (
   <div>
-    <h1>Posts</h1>
+    <h1>POSTS</h1>
     <ul>
     {
       posts.map( post => {
@@ -28,7 +28,7 @@ const Posts = ({ posts }) => {
 const Users = ({ users }) => {
   return (
   <div>
-    <h1>Users</h1>
+    <h1>USERS</h1>
     <ul>
     {
       users.map( user => {
@@ -73,14 +73,14 @@ function App() {
     <nav>
       <Link to='/' className={ pathname === '/' ? 'selected': ''}>HOME</Link>
       <Link to='/posts' className={ pathname === '/posts' ? 'selected': ''}>Posts ({ posts.length })</Link>
-      <Link to='/users' className={ pathname === '/users' ? 'selected': ''}>Posts ({ users.length })</Link>
+      <Link to='/users' className={ pathname === '/users' ? 'selected': ''}>Users ({ users.length })</Link>
     </nav>
 
-    <Routes>
+    {/* <Routes>
       <Route path='/' element={ <Home/> } />
       <Route path='/posts' element={ <Posts posts={ posts }/> } />
       <Route path='users' element={ <Users users={ users } /> } />
-    </Routes>
+    </Routes> */}
       
     </>
   )
